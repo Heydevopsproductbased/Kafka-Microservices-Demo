@@ -1,0 +1,22 @@
+apiVersion: kafka.strimzi.io/v1beta2
+kind: Kafka
+metadata:
+  name: my-cluster
+  namespace: kafka
+spec:
+  kafka:
+    version: 4.1.1
+    metadataMode: kraft
+    listeners:
+      - name: internal
+        port: 9092
+        type: internal
+        tls: false
+    storage:
+      type: persistent-claim
+      size: 10Gi
+      deleteClaim: false
+  zookeeper: null
+  entityOperator:
+    topicOperator: {}
+    userOperator: {}

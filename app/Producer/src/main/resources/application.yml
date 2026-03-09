@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: flight-producer
+
+  kafka:
+    bootstrap-servers: kafka:9092
+
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+    template:
+      default-topic: demo-topic
+
+server:
+  port: 8081
