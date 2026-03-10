@@ -10,3 +10,90 @@ kafka-Microservice-Demo/
 ├── docker-compose.yml          # Kafka + Zookeeper + Microservices
 ├── README.md
 └── .gitignore
+
+                          ┌──────────────────────────────┐
+                          │        REST Client            │
+                          │ (Postman / Curl / Frontend)   │
+                          └───────────────┬──────────────┘
+                                          │  HTTP Request
+                                          ▼
+                          ┌────────────────────────────────┐
+                          │      Producer Microservice      │
+                          │  Spring Boot + Kafka Template   │
+                          └───────────────┬────────────────┘
+                                          │  Publishes message
+                                          ▼
+                         ┌────────────────────────────────────┐
+                         │            Kafka Broker             │
+                         │   (Topic: demo-topic, Partitions)  │
+                         └───────────────┬────────────────────┘
+                                         │  Message pulled
+                                         ▼
+                         ┌────────────────────────────────────┐
+                         │      Consumer Microservice          │
+                         │ Spring Boot + @KafkaListener        │
+                         └───────────────┬────────────────────┘
+                                         │  Optional persistence
+                                         ▼
+                         ┌────────────────────────────────────┐
+                         │              Database               │
+                         │      MySQL / MariaDB (optional)    │
+                         └────────────────────────────────────┘
+
+
+                          ┌──────────────────────────────┐
+                          │        REST Client            │
+                          │ (Postman / Curl / Frontend)   │
+                          └───────────────┬──────────────┘
+                                          │  HTTP Request
+                                          ▼
+                          ┌────────────────────────────────┐
+                          │      Producer Microservice      │
+                          │  Spring Boot + Kafka Template   │
+                          └───────────────┬────────────────┘
+                                          │  Publishes message
+                                          ▼
+                         ┌────────────────────────────────────┐
+                         │            Kafka Broker             │
+                         │   (Topic: demo-topic, Partitions)  │
+                         └───────────────┬────────────────────┘
+                                         │  Message pulled
+                                         ▼
+                         ┌────────────────────────────────────┐
+                         │      Consumer Microservice          │
+                         │ Spring Boot + @KafkaListener        │
+                         └───────────────┬────────────────────┘
+                                         │  Optional persistence
+                                         ▼
+                         ┌────────────────────────────────────┐
+                         │              Database               │
+                         │      MySQL / MariaDB (optional)    │
+                         └────────────────────────────────────┘
+                          ┌──────────────────────────────┐
+                          │        REST Client            │
+                          │ (Postman / Curl / Frontend)   │
+                          └───────────────┬──────────────┘
+                                          │  HTTP Request
+                                          ▼
+                          ┌────────────────────────────────┐
+                          │      Producer Microservice      │
+                          │  Spring Boot + Kafka Template   │
+                          └───────────────┬────────────────┘
+                                          │  Publishes message
+                                          ▼
+                         ┌────────────────────────────────────┐
+                         │            Kafka Broker             │
+                         │   (Topic: demo-topic, Partitions)  │
+                         └───────────────┬────────────────────┘
+                                         │  Message pulled
+                                         ▼
+                         ┌────────────────────────────────────┐
+                         │      Consumer Microservice          │
+                         │ Spring Boot + @KafkaListener        │
+                         └───────────────┬────────────────────┘
+                                         │  Optional persistence
+                                         ▼
+                         ┌────────────────────────────────────┐
+                         │              Database               │
+                         │      MySQL / MariaDB (optional)    │
+                         └────────────────────────────────────┘
